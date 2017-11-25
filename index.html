@@ -1,0 +1,39 @@
+
+<html>
+	<head>
+<title>Basic Calculator with Check Box</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<h1> Cong thuc tinh </h1>
+		 
+<form action="" method="POST">
+		 <label for="first_value">Nhập chiều dài</label>
+		 <input type="text" name="no_one" id="no1" size="5" autofocus>
+		 <br><br>
+		 <label for="second_value">
+		Second Value
+		</label>
+		<input type="text" name="no_2" id="no2" size="5">
+	 <br><br>
+<label class="move">Chon kinh va bia</label><br>
+			<br> <label for="radio1">
+			      
+<input type="checkbox" name="math" onclick="reset_msg();" />Bia
+      
+			</label>
+<input type="checkbox" name="math" onclick="reset_msg();" />Kinh
+
+      
+			 <br><br>
+			           
+			<input type="submit" value="Compute" onclick="return solve();" />
+		        
+			<input type="submit" value="Clear" onclick="return clear();" />
+			<br><br>
+<div id="msg"></div>
+ </form>
+
+ <script src="js/source.js"></script>
+</body>
+</html>
