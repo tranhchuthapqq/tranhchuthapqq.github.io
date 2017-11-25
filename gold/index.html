@@ -1,5 +1,7 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
 	<head>
 <title>Tranh chu thap QQ</title>
 		<style>
@@ -48,36 +50,36 @@ function solve() {
 	var no_one = document.getElementById("no1").value;
 	var no_two = document.getElementById("no2").value;	 
 	if (no_one=="") {	
-		var msg = "<span class='warning'>vui long nhap chieu dai</span>";
+		var msg = "<span class='warning'>Vui lòng nhập chiều dài</span>";
 		document.getElementById('msg').innerHTML = msg;
 		return false;
 	} 
 	else if (no_two=="") {
-		var msg = "<span class='warning'>vui long nhap chieu rong</span>";
+		var msg = "<span class='warning'>Vui lòng nhập chiều rộng</span>";
 		document.getElementById('msg').innerHTML = msg;
 		return false;	
 	}
 				 
 	if (math_opt[0].checked == true &&  math_opt[1].checked == true) {			 
 		kq = ((parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2) +((parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1);				
-		results = "<span class='message'> ket qua la:" + kq +".</span>";
+		results = "<span class='message'> Kết quả là: " + kq +".</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 	} else if (math_opt[1].checked == true) {
 	 	diff = (parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2;				
-		results = "<span class='message'> ket qua la:" + diff +".</span>";
+		results = "<span class='message'> Kết quả là: " + diff +".</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 
 	} else if (math_opt[0].checked == true) {
 		sum = (parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1;					
-		results = "<span class='message'> ket qua la " + sum +".</span>";
+		results = "<span class='message'> Kết quả là: " + sum +".</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 	}			
 								
 	else {
-		var msg = "<span class='warning'>You must select your math operator.</span>";
+		var msg = "<span class='warning'>Bạn phải chọn một phép toán</span>";
 		document.getElementById('msg').innerHTML = msg;
 		return false;
 	}
