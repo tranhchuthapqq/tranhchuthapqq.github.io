@@ -1,0 +1,134 @@
+
+<html>
+	<head>
+<title>Tranh chu thap QQ</title>
+		<style>
+			body,h1 {
+				font-family:arial;
+				font-size:18px;
+				margin: 0 auto;
+				}
+			
+			label{
+				width: 7em;
+				float: left;
+				text-align: right;
+				margin-right: 0.8em;
+				display: block
+				}
+ 
+			h1 {
+				font-family:arial;
+				padding-left: 37px;
+			}
+		.message {
+				color: blue;
+				font-family:arial;
+				font-size:18px;
+				font-weight:bolder;
+				padding-left: 38px;
+}
+			.warning {
+				color: red;
+				font-family:arial;
+				font-size:18px;
+			font-weight:bolder;
+				padding-left: 38px;
+	}
+				
+			 .move {
+			font-style:italic;
+				padding-left: 32px;
+	}	
+			 
+	 </style>	
+	 <script>
+function solve() {
+ 	var math_opt = document.getElementsByName("math");
+	var no_one = document.getElementById("no1").value;
+	var no_two = document.getElementById("no2").value;	 
+	if (no_one=="") {	
+		var msg = "<span class='warning'>Vui l</span>";
+		document.getElementById('msg').innerHTML = msg;
+		return false;
+	} 
+	else if (no_two=="") {
+		var msg = "<span class='warning'>vui long nhap chieu rong</span>";
+		document.getElementById('msg').innerHTML = msg;
+		return false;	
+	}
+				 
+	if (math_opt[0].checked == true &&  math_opt[1].checked == true) {			 
+		kq = ((parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2) +((parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1);				
+		results = "<span class='message'> ket qua la:" + kq +".</span>";
+		document.getElementById('msg').innerHTML = results;
+		return false;
+	} else if (math_opt[1].checked == true) {
+	 	diff = (parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2;				
+		results = "<span class='message'> ket qua la:" + diff +".</span>";
+		document.getElementById('msg').innerHTML = results;
+		return false;
+
+	} else if (math_opt[0].checked == true) {
+		sum = (parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1;					
+		results = "<span class='message'> ket qua la " + sum +".</span>";
+		document.getElementById('msg').innerHTML = results;
+		return false;
+	}			
+								
+	else {
+		var msg = "<span class='warning'>You must select your math operator.</span>";
+		document.getElementById('msg').innerHTML = msg;
+		return false;
+	}
+				
+				return true;
+}
+function reset_msg() {
+document.getElementById('msg').innerHTML = '';
+	 }
+	  function clear()
+			 {
+			document.getElementById('msg').innerHTML = "";
+			no_one="";
+			no_two="";
+			no_one.focus();
+			 }
+			 
+</script>
+</head>
+<body>
+	 
+	<h1> Cong thuc tinh </h1>
+		 
+<form action="" method="POST">
+		 <label for="first_value">
+		 First Value
+		 
+		 </label>
+		 <input type="text" name="no_one" id="no1" size="5" autofocus>
+		 <br><br>
+		 <label for="second_value">
+		Second Value
+		</label>
+		<input type="text" name="no_2" id="no2" size="5">
+	 <br><br>
+<label class="move">Chon kinh va bia</label><br>
+			<br> <label for="radio1">
+			      
+<input type="checkbox" name="math" onclick="reset_msg();" />Bia
+      
+			</label>
+<input type="checkbox" name="math" onclick="reset_msg();" />Kinh
+
+      
+			 <br><br>
+			           
+			<input type="submit" value="Compute" onclick="return solve();" />
+		        
+			<input type="submit" value="Clear" onclick="return clear();" />
+			<br><br>
+<div id="msg"></div>
+ </form>
+</body>
+</html>

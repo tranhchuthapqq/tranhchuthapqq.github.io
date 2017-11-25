@@ -1,39 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Appster - Free Bootstrap 4 App Template</title>
+        <meta name="description" content="Love appster." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Bootstrap 4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!--icons-->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="css/style.css" />
+        <style>
+            /* 
+    Created on : Jul 4, 2017, 12:43:10 AM
+    Author     : Atta-Ur-Rehman Shah (http://attacomsian.com)
+*/
 
-<html>
-	<head>
-<title>Basic Calculator with Check Box</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<h1> Cong thuc tinh </h1>
-		 
-<form action="" method="POST">
-		 <label for="first_value">Nhập chiều dài</label>
-		 <input type="text" name="no_one" id="no1" size="5" autofocus>
-		 <br><br>
-		 <label for="second_value">
-		Second Value
-		</label>
-		<input type="text" name="no_2" id="no2" size="5">
-	 <br><br>
-<label class="move">Chon kinh va bia</label><br>
-			<br> <label for="radio1">
-			      
-<input type="checkbox" name="math" onclick="reset_msg();" />Bia
-      
-			</label>
-<input type="checkbox" name="math" onclick="reset_msg();" />Kinh
+/*Google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Arial:200,300,400,500,600,700,900');
 
-      
-			 <br><br>
-			           
-			<input type="submit" value="Compute" onclick="return solve();" />
-		        
-			<input type="submit" value="Clear" onclick="return clear();" />
-			<br><br>
-<div id="msg"></div>
- </form>
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+}
+.navbar-brand{
+    font-weight: 900;
+    color: #fff;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+}
+.brand-logo{
+    width: 180px;
+}
+.navbar{
+    min-height: 80px;
+}
+.navbar-nav .nav-item .nav-link{
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+}
+.navbar .nav-item .active, .navbar .nav-link:hover, .navbar .navbar-brand:hover{
+    color: #ffb300 !important;
+}
+.hero{
+    height: 100vh;
+    min-height: 600px;
+}
+.hero h1{
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+.hero h2{
+    font-weight: 200;
+    line-height: 45px;
+}
+.store-img{
+    width: 170px;
+    padding-bottom: 10px;
+}  
+a {
+    color: #512DA8;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+a:hover,
+a:focus {
+    color: #512DA8;
+    outline: 0;
+    text-decoration: none;
+}
+a.btn:hover,
+a.btn:focus {
+    color: #fff;
+}
+.bg-inverse a{
+    color: #fff;
+}
+section{
+    padding: 80px 0px;
+}
+.img-team{
+    width: 120px;
+}
+.card-outline-primary{
+    border: solid 1px #512DA8;
+}
+.sticky-navigation{
+    top: -100px;
+}
+/*===============================================
+* Background Colors
+================================================*/
+.bg-texture{
+    background:-webkit-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 100%, transparent 33%);
+    background:-moz-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 100%, transparent 33%);
+    background:linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 100%, transparent 33%);
+}
+.bg-texture-collage{
+    background:-webkit-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 67%, transparent 33%),
+        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
+    background:-moz-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 67%, transparent 33%),
+        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
+    background:linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 67%, transparent 33%),
+        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
+}
+.bg-alt {
+    background-color: #fff;
+}
+.bg-faded{
+    background-color: #EDECEC;
+}
+.bg-grey{
+    background-color: #F9F9FA;
+}
+.bg-primary{
+    background-color: #512DA8 !important;
+}
+.bg-orange{
+    background-color: #ffb300;
+}
+/*===============================================
+* Text Colors
+================================================*/
+.text-faded {
+    color: #EDECEC;
+}
+.text-dark {
+    color: #37474F;
+}
+.text-muted{
+    color: #999 !important;
+}
+.text-light {
+    color: #fff;
+}
+.text-light:hover,.text-light:focus {
+    color: #eee;
+    text-decoration:none;
+}
+.text-primary {
+    color: #512DA8 !important;
+}
+.text-orange{
+    color: #ffb300 !important;
+}
+/*===============================================
+* Icon Sizes
+================================================*/
+.material-icons.dp24 , .icon-sm{
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
 
- <script src="js/source.js"></script>
-</body>
+.material-icons.dp36, .icon-md {
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+}
+
+.material-icons.dp48, .icon-lg{
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+}
+.icon-box{
+    color:#fff;
+    background-color: #512DA8;
+    vertical-align: middle;
+    border-radius: 50px !important;
+    padding:20px;
+    display: inline;
+}
+/*===============================================
+* Colored Buttons
+================================================*/
+.btn {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+.btn-outline-white {
+    color: #fff !important;
+    background-image: none;
+    background-color: transparent;
+    border-color: #fff;
+}
+.btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+.btn-white {
+    color: #512DA8;
+    background-color: #fff;
+    border-color: #fff;
+}
+.btn-white:hover {
+    background: transparent !important;
+    color: #fff !important;
+}
+.btn-primary{
+    background-color: #512DA8 !important;
+    border-color: #512DA8 !important;
+}
+.btn-radius{
+    border-radius: 50px;
+}
+/*===============================================
+* Borders Utilities
+================================================*/
+.border-none{
+    border: none !important;
+    border-color: transparent !important;
+}
+.border-all{
+    border: 1px solid #DEE5E5 !important;
+}
+.border-left{
+    border-left: 1px solid #DEE5E5 !important;
+}
+.border-right{
+    border-right: 1px solid #DEE5E5 !important;
+}
+.border-top{
+    border-top: 1px solid #DEE5E5 !important;
+}
+.border-bottom{
+    border-bottom: 1px solid #DEE5E5 !important;
+}
+/*social icons*/
+.text-twitter-alt, .text-facebook-alt, .text-linkedin-alt, .text-google-alt, .text-github-alt{
+    color:#999;
+}
+.text-twitter, .text-twitter-alt:hover{
+    color:#00aced;
+}
+.text-facebook, .text-facebook-alt:hover{
+    color: #3b5998;
+}
+.text-google, .text-google-alt:hover{
+    color: #dd4b39;
+}
+.text-linkedin, .text-linkedin-alt:hover{
+    color: #007bb6;
+}
+.text-github, .text-github-alt:hover{
+    color: #000000;
+}
+/*
+Pricing tables
+*/
+.pricing-list{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.pricing-list li {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+        </style>
+    </head>
+    <body>
+     
+
+        <!--main section-->
+        <section class="bg-texture hero pt-5">
+            <div class="container">
+                <div class="row d-sm-flex">
+                    <div class="col-sm-6 text-white wow fadeIn">
+                        <div class="mt-5 pt-5 hidden-sm-down"></div>
+                        <h1>TRANH CHỮ THẬP QQ </h1>
+                        <h2>Xin chào quý khách, chúc qúy khách một ngày tốt lành :)</h2>
+                     
+                    </div>
+                    <div class="col-sm-6 pt-5 hidden-sm-down wow fadeInRight">
+                        <img class="img-fluid mx-auto d-block" src="img/shot-3.png"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            /* 
+ Created on : Jul 4, 2017, 12:43:10 AM
+ Author     : Atta-Ur-Rehman Shah (http://attacomsian.com)
+ */
+$(function () {
+
+    //init wow effects
+    new WOW().init();
+
+    //scroll menu
+    $(window).scroll(function () {
+        var secondFeature = $('#features').offset().top;
+        var scroll = $(window).scrollTop();
+        if (scroll >= 300) {
+            $('.sticky-navigation').css({"top": '0px'});
+        } else {
+            $('.sticky-navigation').css({"top": '-100px'});
+        }
+        if (scroll >= secondFeature - 200) {
+            $(".mobileScreen").css({'background-position': 'center top'});
+        }
+        return false;
+    });
+    
+    //page scroll
+    $('a.page-scroll').bind('click', function (event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 20
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+        </script>
+    </body>
 </html>
