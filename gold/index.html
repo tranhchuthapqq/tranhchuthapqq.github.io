@@ -62,18 +62,18 @@ function solve() {
 				 
 	if (math_opt[0].checked == true &&  math_opt[1].checked == true) {			 
 		kq = ((parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2) +((parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1);				
-		results = "<span class='message'> Kết quả là: " + kq +".</span>";
+		results = "<span class='message'> Kết quả là: " + Math.ceil(kq) +" 000 VNĐ </span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 	} else if (math_opt[1].checked == true) {
 	 	diff = (parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2;				
-		results = "<span class='message'> Kết quả là: " + diff +".</span>";
+		results = "<span class='message'> Kết quả là: " + Math.ceil(diff) +" 000 VNĐ</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 
 	} else if (math_opt[0].checked == true) {
 		sum = (parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1;					
-		results = "<span class='message'> Kết quả là: " + sum +".</span>";
+		results = "<span class='message'> Kết quả là: " + Math.ceil(sum) +" 000 VNĐ</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 	}			
@@ -101,35 +101,25 @@ document.getElementById('msg').innerHTML = '';
 </head>
 <body>
 	 
-	<h1> Cong thuc tinh </h1>
+	<h1> Tính toán giá </h1>
 		 
 <form action="" method="POST">
 		 <label for="first_value">
-		 First Value
-		 
+		 Nhập chiều dài
 		 </label>
 		 <input type="text" name="no_one" id="no1" size="5" autofocus>
 		 <br><br>
 		 <label for="second_value">
-		Second Value
+		Nhập chiều rộng 
 		</label>
 		<input type="text" name="no_2" id="no2" size="5">
 	 <br><br>
-<label class="move">Chon kinh va bia</label><br>
-			<br> <label for="radio1">
 			      
-<input type="checkbox" name="math" onclick="reset_msg();" />Bia
-      
+<input type="checkbox" name="math" onclick="reset_msg();" />Bìa
 			</label>
-<input type="checkbox" name="math" onclick="reset_msg();" />Kinh
-
-      
-			 <br><br>
-			           
-			<input type="submit" value="Compute" onclick="return solve();" />
-		        
-			<input type="submit" value="Clear" onclick="return clear();" />
-			<br><br>
+<input type="checkbox" name="math" onclick="reset_msg();" />Kính
+			<input type="submit" value="TÍNH GIÁ" onclick="return solve();" />
+			<input type="submit" value="NHẬP LẠI" onclick="return clear();" />
 <div id="msg"></div>
  </form>
 </body>
