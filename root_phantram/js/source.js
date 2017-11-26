@@ -1,8 +1,10 @@
 function solve() {
  	var math_opt = document.getElementsByName("math");
 	var no_one = document.getElementById("no1").value;
-	var no_two = document.getElementById("no2").value;	 
-	if (no_one=="") {	
+	var no_two = document.getElementById("no2").value;
+    var bia = (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*60;
+
+    if (no_one=="") {
 		var msg = "<span class='warning'>Vui lòng nhập chiều dài</span>";
 		document.getElementById('msg').innerHTML = msg;
 		return false;
@@ -21,7 +23,7 @@ function solve() {
 		return false;
 	//	CHECKBOX BÌA, đơn giá 60
 	} else if (math_opt[0].checked == true) {
-	 	bia = (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*60;
+	 	// bia = (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*60;
 		results = "<span class='message'> Kết quả là: " + Math.ceil(bia) +" 000 VNĐ</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <title>Tranh chu thap QQ</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+<h1> Tính toán giá </h1>
+<form action="" method="POST">
+    <label> Nhập chiều dài</label>
+    <input type="text" name="no_one" id="no1" size="5" autofocus>
+    <br><br>
+    <label>Nhập chiều rộng</label>
+    <input type="text" name="no_2" id="no2" size="5">
+    <br><br>
+    <input type="checkbox" name="math" onclick="reset_msg();"/>Bìa
+    <input type="checkbox" name="math" onclick="reset_msg();"/>Kính
+    <br>
+    <input type="checkbox" name="math" onclick="reset_msg();"/>Bo cây
+    <input type="checkbox" name="math" onclick="reset_msg();"/>Không bo
+    <br>
+    <input type="checkbox" name="math" onclick="reset_msg();"/>Nẹp
+    <input type="checkbox" name="math" onclick="reset_msg();"/>Đồng hồ
+    <br>
+    <input type="checkbox" name="math" onclick="reset_msg();"/>3cm
+    <input type="checkbox" name="math" onclick="reset_msg();"/>5cm
+    <input type="checkbox" name="math" onclick="reset_msg();"/>7cm
+    <input type="checkbox" name="math" onclick="reset_msg();"/>9cm
+    <input type="checkbox" name="math" onclick="reset_msg();"/>10cm
+    <br>
+    <input type="submit" value="TÍNH GIÁ" onclick="return solve();"/>
+    <!-- <input type="submit" value="NHẬP LẠI" onclick="return clear();" /> -->
+    <div id="msg"></div>
+</form>
+<script src="js/source.js"></script>
+</body>
+</html>
