@@ -89,14 +89,14 @@ function solve() {
 function reset_msg() {
 document.getElementById('msg').innerHTML = '';
 	 }
-	  function clear()
+	 /* function clear()
 			 {
 			document.getElementById('msg').innerHTML = "";
 			no_one="";
 			no_two="";
 			no_one.focus();
 			 }
-			 
+		*/	 
 </script>
 </head>
 <body>
@@ -119,7 +119,7 @@ document.getElementById('msg').innerHTML = '';
 			</label>
 <input type="checkbox" name="math" onclick="reset_msg();" />Kính
 			<input type="submit" value="TÍNH GIÁ" onclick="return solve();" />
-			<input type="submit" value="NHẬP LẠI" onclick="return clear();" />
+			<!-- <input type="submit" value="NHẬP LẠI" onclick="return clear();" /> -->
 <div id="msg"></div>
  </form>
 </body>
