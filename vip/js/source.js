@@ -12,27 +12,28 @@ function solve() {
 		document.getElementById('msg').innerHTML = msg;
 		return false;	
 	}
-				 
+    //	CHECKBOX BÌA VÀ KÍNH
 	if (math_opt[0].checked == true &&  math_opt[1].checked == true) {			 
-		kq = ((parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2) +((parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1);				
-		results = "<span class='message'> ket qua la:" + kq +".</span>";
+		bia_kinh = (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*60 + (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*120;
+		results = "<span class='message'> Kết quả là:" + Math.ceil(bia_kinh) +" 000 VNĐ</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
-	} else if (math_opt[1].checked == true) {
-	 	diff = (parseInt(no_one) + parseInt(no_two))*2+(parseInt(no_one) + parseInt(no_two))*2*0.2;				
-		results = "<span class='message'> ket qua la:" + diff +".</span>";
-		document.getElementById('msg').innerHTML = results;
-		return false;
-
+	//	CHECKBOX BÌA
 	} else if (math_opt[0].checked == true) {
-		sum = (parseInt(no_one) + parseInt(no_two))*2+ (parseInt(no_one) + parseInt(no_two))*2*0.1;					
-		results = "<span class='message'> ket qua la " + sum +".</span>";
+	 	bia = (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*60;
+		results = "<span class='message'> Kết quả là: " + Math.ceil(bia) +" 000 VNĐ</span>";
+		document.getElementById('msg').innerHTML = results;
+		return false;
+        //	CHECKBOX KÍNH
+	} else if (math_opt[1].checked == true) {
+        kinh = (parseInt(no_one) * parseInt(no_two)) + (parseInt(no_one) * parseInt(no_two))*120;
+		results = "<span class='message'> Kết quả là " + Math.ceil(kinh) +" 000 VNĐ</span>";
 		document.getElementById('msg').innerHTML = results;
 		return false;
 	}			
 								
 	else {
-		var msg = "<span class='warning'>Vui lòng nhập chiều dài hoặc chiều rộng.</span>";
+		var msg = "<span class='warning'>Chọn loại ở checbox.</span>";
 		document.getElementById('msg').innerHTML = msg;
 		return false;
 	}
