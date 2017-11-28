@@ -72,11 +72,5 @@ else {
 function reset_msg() {
 document.getElementById('msg').innerHTML = '';
 	 }
-	  function clear()
-			 {
-			document.getElementById('msg').innerHTML = "";
-			no_one="";
-			no_two="";
-			no_one.focus();
-			 }
+
 			 
