@@ -1,7 +1,8 @@
 var hesos = [ 120, 60, 26, 11, 9, 35, 25, 45, 60, 90, 100];
 var sum = 0;
-var dai = 0, rong = 0;
-
+var dai;
+var	rong ;
+var money;
 $('#no1').change(function() {
 	dai =  $('#no1').val();
 	tinhTong();
@@ -16,8 +17,8 @@ $('#no2').change(function() {
 
 function tinhTong() {
 	sum = 0;
-	for (let i = 2; i < $('.game').length; i++) {
-		var money = dai * rong * hesos[i];
+	for (var i = 0; i < $('.game').length; i++) {
+		money = hesos[i]*(2*(dai + rong));
 		if (($('#game'+(i)).is(':checked'))) {
 			sum += money;
 		}
@@ -26,7 +27,7 @@ function tinhTong() {
 
 $('.game').click(function() {
 	var index = $('.game').index(this);
-	var money = dai * rong * hesos[index];
+	money = hesos[index]*(2*(dai + rong));
 	if (!($('#game'+(index)).is(':checked'))) {
 		money = -money;
 	}
