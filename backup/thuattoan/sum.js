@@ -23,7 +23,7 @@ function tinhTong() {
 		}
 	}
 }
-
+// CHU Y: doi voi phep cong su dung parseInt()
 $('.game').click(function() {
 	var index = $('.game').index(this);
 	var money = dai * rong * hesos[index];
